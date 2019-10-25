@@ -1,7 +1,7 @@
 import React from 'react';
-import ThirdStep from '../components/ThirdStep';
+import Form from '../components/Form';
 
-class ThirdStepContainer extends React.Component {
+class FormContainer extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -47,20 +47,10 @@ class ThirdStepContainer extends React.Component {
       }
 
     render() {
-        return <ThirdStep 
-        totalAmount={this.state.totalAmount}
-        handleChange={this.handleChange}
-        handleChangeDiscountCode={this.handleChangeDiscountCode}
-        handleApplyDiscount={this.handleApplyDiscount}
-        applyDiscount={this.state.applyDiscount}
-        discount={this.state.discount}
-        showList={this.state.showList}
-        hideListUser={this.hideListUser}
-        showListUser={this.showListUser}
-        insuredUsers={this.props.insuredUsers}
+        return <Form 
         handleSubmit = {this.handleSubmitThirdStep}
         />
     }
 }
 
-export default ThirdStepContainer;
+export default FormContainer;
