@@ -14,28 +14,18 @@ import {
   handleValidateCvv
 } from "../../validations/field";
 
-const ThirdStep = ({
+import {
+  handleValidateForm,
+} from "../../validations/form";
+
+const Form = ({
   error,
   handleSubmit,
   pristine,
   reset,
   submitting,
-  name,
-  numberDni,
   initialValues,
-  disabledTextfieldDni,
-  modifyDni,
   invalid,
-  totalAmount,
-  handleChange,
-  handleChangeDiscountCode,
-  handleApplyDiscount,
-  applyDiscount,
-  discount,
-  showList,
-  hideListUser,
-  showListUser,
-  insuredUsers
 }) => {
   return (
     <React.Fragment>
@@ -117,18 +107,9 @@ const ThirdStep = ({
                       <Col xs={12}>
                       <ButtonComponent
                             type={"submit"}
-                            // disabled={submitting || invalid}
-                            content={`PAGAR ${totalAmount}`}
+                            disabled={submitting || invalid}
+                            content={`PAGAR`}
                           />
-                        {/* <Button
-                          variant="contained"
-                          color="primary"
-                          fullWidth
-                          type="submit"
-                          // disabled={submitting || invalid
-                        >
-                          PAGAR {totalAmount}
-                        </Button> */}
                       </Col>
                     </Row>
                   </FormComponent>
@@ -143,5 +124,6 @@ const ThirdStep = ({
 };
 
 export default reduxForm({
-  form: "FormThirdStep",
-})(ThirdStep);
+  form: "Form",
+  validate: handleValidateForm,
+})(Form);
