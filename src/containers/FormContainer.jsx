@@ -22,6 +22,7 @@ class FormContainer extends React.Component {
 
     render() {
         return <Form 
+        initialValues={{ acceptcuota: true, acceptpolitics:true }}
         onSubmit = {this.handleSubmitForm}
         onSubmitSuccess = {this.handleSuccessForm}
         />

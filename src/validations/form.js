@@ -8,7 +8,9 @@
       error._error = "dueDate, valor requerido";
     } else if(!values.cvv) {
         error._error = "cvv, valor requerido";
-    } else if(!values.acceptcuota) {
+    } else if(!values.email) {
+      error._error = "email, valor requerido";
+    }else if(!values.acceptcuota) {
         error._error = "acceptcuota, valor requerido";
     }  else if(!values.acceptpolitics) {
         error._error = "acceptpolitics, valor requerido";
